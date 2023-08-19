@@ -37,7 +37,7 @@
     from payment p 
     join rental r ON r.rental_id = p.rental_id
     join customer c ON p.customer_id = c.customer_id 
-    where date(p.payment_date) = '2005-07-30'
+    where date(p.payment_date) >= '2005-07-30' and date(p.payment_date) < DATE_ADD('2005-07-30', INTERVAL 1 DAY)
     GROUP BY c.customer_id 
 
     
