@@ -30,7 +30,7 @@
 
 # оптимизируйте запрос: внесите корректировки по использованию операторов, при необходимости добавьте индексы
 
-    CREATE INDEX idx_payment_date ON payment((date(payment_date)))
+    CREATE INDEX idx_payment_d ON payment(payment_date)
 
     explain analyze
     select concat(c.last_name, ' ', c.first_name), sum(p.amount)
